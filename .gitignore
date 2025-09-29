@@ -2,3 +2,5 @@ node_modules/
 firebase-config.js
 .env
 dist/
+recipes.js
+donate-nearby.html
