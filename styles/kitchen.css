@@ -1,0 +1,216 @@
+/* --- My Kitchen Specific Styles --- */
+.pantry-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1 1 30%;
+  min-width: 150px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem; /* rounded-md */
+    font-size: 1rem;
+    height: 2.5rem;
+}
+
+.add-item-button {
+    background-color: var(--fresh-green);
+    color: var(--soft-cream);
+    font-weight: 700;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-item-button:hover {
+    background-color: #4d905a;
+}
+
+/* tab bar */
+.pantry-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  background-color: #e5e7eb; /* bg-gray-200 */
+  color: #4b5563; /* text-gray-800 */
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px; /* rounded-full */
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tab-button:hover {
+    background-color: #d1d5db; /* bg-gray-300 */
+}
+
+.tab-button.active {
+    background-color: #1f2937; /* bg-gray-800 */
+    color: #f9fafb; /* text-white */
+}
+
+.loading-message {
+  text-align: center;
+  color: #6b7280;
+}
+
+.pantry-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Animation */
+@keyframes shrink-and-fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+.pantry-item {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.pantry-item.shrink {
+  animation: shrink-and-fade 0.4s ease-out forwards;
+}
+
+.eaten-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 10px;
+}
+
+.eaten-action:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.eaten-action .eat-btn {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #605052;
+  cursor: pointer;
+}
+
+.eaten-action span {
+  font-size: 0.8rem;
+  color: #605052;
+  font-weight: 700;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.item-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.item-details {
+  font-size: 0.875rem;
+  color: #6b7280; /* text-gray-500 */
+}
+
+.item-details-separator {
+  margin: 0 0.5rem;
+  color: #d1d5db; /* A subtle gray for the bar */
+}
+
+.item-actions {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.item-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af; /* text-gray-400 */
+    font-size: 1.1rem;
+    transition: color 0.2s;
+    padding: 0.25rem;
+}
+
+.item-actions button:hover {
+    color: #4b5563; /* text-gray-600 */
+}
+
+/* Status colors */
+.status-good {
+    border-left: 5px solid var(--fresh-green);
+}
+
+.status-warning {
+    border-left: 5px solid #f59e0b; /* Yellow */
+}
+
+.status-bad {
+    border-left: 5px solid #ef4444; /* Red */
+}
+
+.bg-status-good {
+    background-color: #d1fae5; /* Light green */
+}
+
+.bg-status-warning {
+    background-color: #fef3c7; /* Light yellow */
+}
+
+.bg-status-bad {
+    background-color: #fee2e2; /* Light red */
+}

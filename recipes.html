@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recipe Generator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4C+0yKzC+T8m1fQ/6F/4wXfP3J2H9F9jL8z/Y3hB+t5jF8j/1z+5D+e/q/v2l7P2X+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- Link to our custom stylesheet -->
+        <link rel="stylesheet" href="styles/general.css"> 
+        <link rel="stylesheet" href="styles/recipes.css">
+    </head>
+    
+    <body class="body-main">
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Recipe Generator Page -->
+            <section id="recipes-page" class="page-section">
+                <h2 class="feature-title">Recipe Generator</h2>
+                <div class="feature-card">
+                    <p class="feature-description">This is where you'll find recipes based on what you have in your pantry.</p>
+                    <div class="feature-content-area">
+                        <!-- Quick Add Pantry Items Section -->
+                        <div class="quick-add-container">
+                            <h3 class="quick-add-title">Quickly add common ingredients</h3>
+                            <div id="quick-add-pills" class="quick-add-pills">
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Flour">Flour</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Sugar">Sugar</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Eggs">Eggs</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Milk">Milk</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Butter">Butter</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Salt">Salt</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Pepper">Pepper</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Onions">Onions</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Garlic">Garlic</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Potatoes">Potatoes</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Tomatoes">Tomatoes</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Chicken">Chicken</span>
+                                <span class="ingredient-pill quick-add-item" data-ingredient="Rice">Rice</span>
+                            </div>
+                        </div>
+
+                        <!-- Add New Ingredient Input -->
+                        <h3 class="additional-items-title">...and any additional items</h3>
+                        <div class="add-ingredient-container">
+                            <input type="text" class="ingredient-input" placeholder="Add ingredients you have...">
+                            <button class="add-button">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- Selected Ingredients Pills Container -->
+                        <div id="selected-ingredients-container" class="selected-ingredients-container">
+                            <span class="ingredient-pill">
+                                Carrots <i class="fa-solid fa-xmark"></i>
+                            </span>
+                            <span class="ingredient-pill">
+                                Onions <i class="fa-solid fa-xmark"></i>
+                            </span>
+                            <span class="ingredient-pill">
+                                Garlic <i class="fa-solid fa-xmark"></i>
+                            </span>
+                        </div>
+
+                        <button class="generate-button">
+                            Generate Recipes
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recipe Card List View -->
+                <div id="card-list" class="recipe-card-grid">
+                </div>
+
+                <!-- Detailed Recipe View -->
+                <!--<div id="detailed-view" class="detailed-recipe hidden">
+                    <div class="back-button-container">
+                        <button class="back-button"><i class="fa-solid fa-arrow-left"></i> Back to Recipes</button>
+                    </div>
+                    <div class="feature-card">
+                        <img src="https://placehold.co/1200x800/F9F4E9/2C3E50?text=Placeholder" alt="Detailed Recipe Image" class="detailed-recipe-image">
+                        <div class="p-4">
+                            <h1 class="detailed-recipe-title text-4xl font-bold mb-4">Mushroom Risotto</h1>
+                            <p class="recipe-summary">
+                                This creamy, rich mushroom risotto is a comforting dish that's surprisingly easy to master. 
+                                It's packed with flavor from a medley of mushrooms and fresh herbs. Perfect for a cozy night in.
+                            </p>
+
+                            <h3 class="recipe-section-title">Ingredients</h3>
+                            <ul class="recipe-list">
+                                <li>1 tbsp olive oil</li>
+                                <li>1 large onion, diced</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>2 cups assorted mushrooms, sliced</li>
+                                <li>1.5 cups Arborio rice</li>
+                                <li>1/2 cup dry white wine</li>
+                                <li>4-5 cups hot vegetable broth</li>
+                                <li>1/2 cup grated Parmesan cheese</li>
+                                <li>2 tbsp butter</li>
+                                <li>Salt and pepper to taste</li>
+                            </ul>
+
+                            <h3 class="recipe-section-title">Instructions</h3>
+                            <ol class="recipe-list">
+                                <li>Heat olive oil in a large pan over medium heat. Add onion and cook until softened.</li>
+                                <li>Add garlic and mushrooms, cooking until mushrooms are golden brown.</li>
+                                <li>Stir in the Arborio rice and cook for 1 minute, toasting the grains.</li>
+                                <li>Pour in the white wine and cook until absorbed, stirring constantly.</li>
+                                <li>Add a ladle of hot broth to the rice, stirring until absorbed. Continue this process, adding broth a ladle at a time, until the rice is creamy and al dente (about 20-25 minutes).</li>
+                                <li>Remove from heat. Stir in the Parmesan and butter. Season with salt and pepper.</li>
+                                <li>Serve immediately, garnished with fresh parsley if desired.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div> -->
+                <div id="recipe-modal" class="recipe-modal-overlay hidden">
+                    <div class="modal-container">
+                        <button class="modal-close-btn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <div id="recipe-modal-content" class="recipe-modal-content"></div>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+        
+        <!-- Link to our custom JavaScript -->
+        <script type="module" src="script/utils.js"></script>
+        <script type="module" src="script/recipes.js"></script>
+    </body>
+</html>

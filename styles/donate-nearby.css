@@ -1,0 +1,175 @@
+/* --- Donate Nearby Specific Styles --- */
+
+#map-layout-container {
+    display: flex;
+    flex-direction: column-reverse; /* Stack list on top on mobile */
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* On larger screens, show side-by-side */
+@media (min-width: 768px) {
+    #map-layout-container {
+        flex-direction: row;
+        height: 50vh; /* Set a viewport height */
+        min-height: 500px;
+    }
+}
+
+#locations-list-container {
+    flex-basis: 35%; /* List takes up 35% of the width */
+    height: 58vh; /* Match the map height */
+    overflow-y: auto; /* Allow scrolling if list is long */
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+#list-header {
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 1rem;
+    background-color: var(--soft-cream);
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+}
+
+#locations-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.location-item {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.location-item:hover {
+    background-color: var(--soft-cream);
+}
+
+.location-item:last-child {
+    border-bottom: none;
+}
+
+.location-item h4 {
+    margin: 0 0 0.25rem 0;
+    color: var(--charcoal);
+}
+
+.location-item p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #4b5563; /* text-gray-600 */
+}
+
+#zip-search-container {
+    padding: 1rem;
+    background-color: var(--soft-cream);
+    border-top: 1px solid #e5e7eb;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+}
+
+#zip-search-header {
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+#zip-search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#zip-input {
+    flex-grow: 1; /* Allows input to take up available space */
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    font-family: var(--body-font);
+    text-align: center;
+}
+
+#zip-input::placeholder {
+    color: #9ca3af;
+}
+
+#zip-search-button {
+    border: none;
+    background-color: var(--fresh-green);
+    color: white;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+#zip-search-button:hover {
+    background-color: #5b9968; /* A darker shade of fresh-green */
+}
+
+#map-container {
+    flex-basis: 65%; /* Map takes up 65% of the width */
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden; /* Ensures map corners are rounded */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    min-height: 400px; /* Ensure map is visible on mobile */
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+#loading-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    font-size: 1.5rem;
+    color: var(--charcoal);
+}
+
+.fa-spinner {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--fresh-green);
+}
+
+/* --- InfoWindow Custom Styles --- */
+.info-window-content {
+    padding: 0.5rem;
+}
+.info-window-content h5 {
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--charcoal);
+}
+.info-window-content p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+.info-window-content a {
+    color: var(--fresh-green);
+    font-weight: 600;
+    text-decoration: none;
+}
+.info-window-content a:hover {
+    text-decoration: underline;
+}

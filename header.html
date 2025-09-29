@@ -1,0 +1,40 @@
+<!-- Header & Navigation -->
+<header class="header-main">
+    <nav class="nav-container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <div class="logo-icon">
+                <!--<i class="fa-solid fa-utensils"></i>-->
+                <img src="logo transparent.png" class="logo-img">
+            </div>
+            <h1 class="logo-text">PantryPal</h1>
+        </div>
+        
+        <!-- Navigation Links -->
+        <ul class="nav-links-list">
+            <li><a href="index.html" class="nav-link nav-link-active">Home</a></li>
+            <li><a href="kitchen.html" class="nav-link disabled-link" id="pantry-link">My Pantry</a></li>
+            <li><a href="recipes.html" class="nav-link">Recipe Generator</a></li>
+            <li><a href="donate-nearby.html" class="nav-link disabled-link" id="chat-link">Donate Nearby</a></li>
+        </ul>
+        
+        <!-- User Profile Icon / Sign In Button -->
+        <div class="profile-icon-container">
+            <div id="auth-status">
+                <!-- Placeholder for auth status -->
+            </div>
+            <div id="user-menu-container" class="hidden">
+                <div id="profile-display">
+                    <div id="profile-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <span id="user-name" class="user-greeting"></span>
+                </div>
+                <div id="user-menu" class="dropdown-menu hidden">
+                    <button id="saved-recipes-btn" class="dropdown-item"><a href="./saved-recipes.html">Saved Recipes</a></button>
+                    <button id="signout-button" class="dropdown-item">Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

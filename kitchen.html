@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Pantry</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4C+0yKzC+T8m1fQ/6F/4wXfP3J2H9F9jL8z/Y3hB+t5jF8j/1z+5D+e/q/v2l7P2X+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- Link to our custom stylesheet -->
+        <link rel="stylesheet" href="styles/general.css"> 
+        <link rel="stylesheet" href="styles/kitchen.css">
+    </head>
+
+    <body class="body-main">
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- My Pantry Page -->
+            <section id="pantry-page" class="page-section">
+                <h2 class="feature-title">My Pantry</h2>
+                <div class="feature-card">
+                    <p class="feature-description">This is where you'll manage your fridge, freezer, and pantry items. You can add, edit, and see expiration dates here.</p>
+                    <div class="feature-content-area">
+                        <!--Form to add new items-->
+                        <form id="pantry-form" class="pantry-form-container">
+                            <div class="form-group">
+                                <label for="item-name">Item Name:</label>
+                                <input type="text" id="item-name" name="item-name" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="item-quantity">Quantity:</label>
+                                    <input type="number" id="item-quantity" name="item-quantity" min="1" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="item-expiry">Expiration Date:</label>
+                                    <input type="date" id="item-expiry" name="item-expiry" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="item-place">Place:</label>
+                                    <select id="item-place" name="item-place" required>
+                                        <option value="">Select a place</option>
+                                        <option value="Pantry">Pantry</option>
+                                        <option value="Fridge">Fridge</option>
+                                        <option value="Freezer">Freezer</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="add-item-button">Add Item</button>
+                        </form>
+
+                        <div id="pantry-tabs" class="pantry-tabs">
+                            <button data-place="All" class="tab-button">All</button>
+                            <button data-place="Pantry" class="tab-button">Pantry</button>
+                            <button data-place="Fridge" class="tab-button">Fridge</button>
+                            <button data-place="Freezer" class="tab-button">Freezer</button>
+                        </div>
+
+                        <p id="pantry-loading" class="loading-message hidden">Loading your pantry items...</p>
+                        
+                        <!-- Placeholder for the list of items -->
+                        <!--<ul class="item-list">
+                            <li class="pantry-item">
+                                <span class="item-name">Apples</span>
+                                <span class="item-expiration">Expires: Aug 25, 2025</span>
+                            </li>
+                            <li class="pantry-item">
+                                <span class="item-name">Milk</span>
+                                <span class="item-expiration">Expires: Aug 20, 2025</span>
+                            </li>
+                        </ul>-->
+                        <div id="pantry-list" class="pantry-list">
+                            <!-- Items will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <!-- Modal for editing items -->
+        <div id="edit-item-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <button class="close-modal" id="close-edit-modal">&times;</button>
+                <h2 class="modal-title">Edit Item</h2>
+                <form id="edit-form">
+                    <input type="hidden" id="edit-item-id">
+                    <div class="form-group">
+                        <label for="edit-item-name">Item Name:</label>
+                        <input type="text" id="edit-item-name" name="edit-item-name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edit-item-quantity">Quantity:</label>
+                            <input type="number" id="edit-item-quantity" name="edit-item-quantity" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-item-expiry">Expiration Date:</label>
+                            <input type="date" id="edit-item-expiry" name="edit-item-expiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-item-place">Category:</label>
+                            <select id="edit-item-place" name="edit-item-place" required>
+                                <option value="Pantry">Pantry</option>
+                                <option value="Fridge">Fridge</option>
+                                <option value="Freezer">Freezer</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="add-item-button">Save Changes</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- JavaScript -->
+        <script type="module" src="script/utils.js"></script>
+        <script type="module" src="script/kitchen.js"></script>
+    </body>
+</html>

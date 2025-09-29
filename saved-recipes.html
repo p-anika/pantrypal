@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Saved Recipes</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4C+0yKzC+T8m1fQ/6F/4wXfP3J2H9F9jL8z/Y3hB+t5jF8j/1z+5D+e/q/v2l7P2X+g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- Link to our custom stylesheet -->
+        <link rel="stylesheet" href="styles/general.css"> 
+        <link rel="stylesheet" href="styles/saved-recipes.css">
+    </head>
+    
+    <body class="body-main">
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Recipe Generator Page -->
+            <section id="saved-recipes-page" class="page-section">
+                <h2 class="feature-title">Saved Recipes</h2>
+                <div class="feature-card">
+                    <p class="feature-description">Find your saved recipes here and start cooking!</p>
+                    <div class="feature-content-area"></div>
+                </div>
+            </section>
+        </main>
+
+
+        <div id="recipe-modal-overlay" class="recipe-modal-overlay hidden">
+            <div class="modal-container">
+                <button class="modal-close-btn">&times;</button>
+                <div class="recipe-modal-content">
+                    </div>
+            </div>
+        </div>
+
+        
+        <!-- Link to our custom JavaScript -->
+        <script type="module" src="script/utils.js"></script>
+        <script type="module" src="script/saved-recipes.js"></script>
+    </body>
+</html>
